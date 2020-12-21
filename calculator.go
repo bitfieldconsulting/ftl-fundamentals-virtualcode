@@ -33,5 +33,5 @@ func Divide(a, b float64) (float64, error) {
 
 // SquareRoot of a number. Return square root or error
 func SquareRoot(a float64) float64 {
-	return math.Sqrt(4)
+	return math.Sqrt(a)
 }
