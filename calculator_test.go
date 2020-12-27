@@ -100,6 +100,8 @@ func TestSqrt(t *testing.T) {
 	}
 	testCases := []testCase{
 		{a: 4, want: 2, errExpected: false},
+		{a: 16, want: 4, errExpected: false},
+		{a: 9, want: 3, errExpected: false},
 	}
 	for _, tc := range testCases {
 		got := calculator.SquareRoot(tc.a)
