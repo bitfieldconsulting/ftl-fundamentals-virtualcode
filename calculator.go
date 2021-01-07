@@ -32,6 +32,9 @@ func Divide(a, b float64) (float64, error) {
 }
 
 // SquareRoot of a number. Return square root or error
-func SquareRoot(a float64) float64 {
-	return math.Sqrt(a)
+func SquareRoot(a float64) (float64, error) {
+	if a < 0 {
+		return 0, fmt.Errorf("square root of a number less than 0 is undefined")
+	}
+	return math.Sqrt(a), nil
 }

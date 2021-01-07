@@ -104,7 +104,11 @@ func TestSqrt(t *testing.T) {
 		{a: 9, want: 3, errExpected: false},
 	}
 	for _, tc := range testCases {
-		got := calculator.SquareRoot(tc.a)
+		got, err := calculator.SquareRoot(tc.a)
+		errReceived := err != nil
+		if errReceived != tc.errExpected {
+			t.Fatalf("unexpected error")
+		}
 		if got != tc.want {
 			t.Error("Sqrt incorrect")
 		}
